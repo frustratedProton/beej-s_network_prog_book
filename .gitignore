@@ -1,4 +1,8 @@
-.app
-.a.out
-.clang-format
+a.out
+*.o
+*.obj
+*.exe
+*.out
 compile_flags.txt
+
+build/
