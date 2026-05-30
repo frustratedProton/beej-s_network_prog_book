@@ -14,7 +14,7 @@
 
 #define PORT "9034"
 
-const char *int_ntop2(void *addr, char *buf, size_t size) {
+const char *inet_ntop2(void *addr, char *buf, size_t size) {
     struct sockaddr_storage *sas = addr;
     struct sockaddr_in *sa4;
     struct sockaddr_in6 *sa6;
@@ -112,8 +112,8 @@ void handle_new_connection(int listener, int *fd_count, int *fd_size,
     } else {
         add_to_pfds(pfds, newfd, fd_count, fd_size);
 
-        // printf("pollserver: new connection from %s on socket %d\n",
-        //        inet_ntop2(&remoteaddr, remoteIP, sizeof remoteIP), newfd);
+        printf("pollserver: new connection from %s on socket %d\n",
+               inet_ntop2(&remoteaddr, remoteIP, sizeof remoteIP), newfd);
     }
 }
 
